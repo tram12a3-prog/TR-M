@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<nav>
+<ul>
+<li><a href="#stem">🚀 STEM</a></li>
+<li><a href="#vanhoadoc">📚 Văn hóa đọc</a></li>
+<li><a href="#songxanh">🌿 Sống xanh</a></li>
+<li><a href="#phapluat">⚖️ Pháp luật</a></li>
+<li><a href="#vannghe">🎤 Văn nghệ</a></li>
+<li><a href="#tienganh"> 🌍 Tiếng Anh</a></li>
+<li><a href="#thethao">🏆 Thể thao</a></li>
+</ul>
+</nav>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLB THPT Võ Nguyên Giáp - Web 8 Cute</title>
+
+<style>
+/* ===== BẢNG KHÔNG DÒNG KẺ ===== */
+
+table{
+width:100%;
+border-collapse:separate;
+border-spacing:0 12px; /* tạo khoảng cách giữa các hàng */
+margin-top:20px;
+}
+
+th{
+text-align:left;
+padding:10px;
+font-size:15px;
+color:#6a5acd;
+}
+
+td{
+padding:12px 10px;
+font-size:14px;
+background:rgba(255,255,255,0.6);
+border-radius:12px;
+}
+
+/* Làm mỗi hàng giống 1 khối mềm */
+tr{
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+/* ===== MENU ĐIỀU HƯỚNG ===== */
+
+nav{
+position:sticky;
+top:0;
+z-index:1000;
+background:linear-gradient(90deg,#6a5acd,#ff7f50);
+padding:12px 10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+nav ul{
+list-style:none;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-size:14px;
+font-weight:600;
+padding:8px 14px;
+border-radius:20px;
+transition:0.3s;
+background:rgba(255,255,255,0.15);
+}
+
+nav ul li a:hover{
+background:white;
+color:#6a5acd;
+transform:scale(1.05);
+}
+  /* Cuộn mượt */
+html{
+scroll-behavior:smooth;
+}
+/* ===== CLUB SIÊU ĐẸP ===== */
+
+.club{
+display:flex;
+flex-wrap:wrap;
+margin:60px 0;
+border-radius:30px;
+overflow:hidden;
+scroll-margin-top:120px;
+background:#ffffff;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+transition:0.4s;
+position:relative;
+border:3px solid transparent;
+}
+
+/* Hiệu ứng viền gradient */
+.club::before{
+content:"";
+position:absolute;
+inset:0;
+border-radius:30px;
+padding:3px;
+background:linear-gradient(135deg,#6a5acd,#ff7eb3,#4facfe);
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+-webkit-mask-composite:xor;
+mask-composite:exclude;
+pointer-events:none;
+}
+
+/* Hover nổi bật */
+.club:hover{
+transform:translateY(-12px) scale(1.02);
+box-shadow:0 25px 45px rgba(0,0,0,0.15);
+}
+
+/* Nội dung */
+.club-content{
+flex:1;
+padding:35px;
+}
+
+/* Tiêu đề gradient đẹp */
+.club-content h2{
+margin-top:0;
+font-size:26px;
+font-weight:800;
+background:linear-gradient(90deg,#6a5acd,#ff7eb3);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+letter-spacing:1px;
+margin-bottom:15px;
+}
+
+/* Chữ mô tả */
+.club-content p{
+font-size:15px;
+line-height:1.7;
+margin:10px 0;
+color:#555;
+}
+
+/* Ảnh */
+.club img{
+flex:1;
+min-width:300px;
+height:100%;
+object-fit:cover;
+transition:0.4s;
+}
+
+.club:hover img{
+transform:scale(1.05);
+}
+
+/* Responsive */
+@media(max-width:768px){
+.club{
+flex-direction:column;
+}
+.club img{
+height:250px;
+}
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#fbd3e9,#bbd2ff);
+color:#333;
+}
+
+/* HEADER */
+header{
+text-align:center;
+padding:50px 20px;
+background:white;
+border-bottom-left-radius:40px;
+border-bottom-right-radius:40px;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+
+header h1{
+color:#6a5acd;
+font-size:32px;
+margin-bottom:10px;
+}
+
+header p{
+color:#ff7f50;
+font-weight:500;
+}
+
+/* CONTAINER */
+.container{
+max-width:1100px;
+margin:40px auto;
+padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+/* CARD */
+.card{
+background:white;
+padding:25px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+position:relative;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+/* ICON CIRCLE */
+.icon{
+width:60px;
+height:60px;
+background:linear-gradient(45deg,#ff9a9e,#fad0c4);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+margin-bottom:15px;
+}
+
+/* TITLE */
+.card h2{
+color:#6a5acd;
+margin-bottom:10px;
+}
+
+/* TEXT */
+.card p{
+font-size:14px;
+margin:5px 0;
+}
+
+/* MANAGER BADGE */
+.manager{
+margin-top:10px;
+display:inline-block;
+background:#ffe0b2;
+padding:6px 14px;
+border-radius:20px;
+font-size:13px;
+color:#ff7043;
+font-weight:500;
+}
+
+/* BUTTON */
+.btn{
+display:block;
+margin-top:15px;
+text-align:center;
+padding:10px;
+background:linear-gradient(45deg,#6a5acd,#ff7f50);
+color:white;
+border-radius:25px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn:hover{
+  opacity:0.85;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+margin-top:40px;
+background:white;
+border-top-left-radius:30px;
+border-top-right-radius:30px;
+box-shadow:0 -5px 20px rgba(0,0,0,0.08);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🌸 HỆ THỐNG CÂU LẠC BỘ 🌸</h1>
+<p>THPT Võ Nguyên Giáp – Năng động & Sáng tạo</p>
+</header>
+<table>
+<tr>
+<th>STT</th>
+<th>Tuần</th>
+<th>Câu lạc bộ</th>
+<th>Người phụ trách</th>
+</tr>
+<tr><td>1</td><td>1</td><td>CLB STEM</td><td>Phan Thị Điệp</td></tr>
+<tr><td>2</td><td>1</td><td>CLB Văn hóa đọc</td><td>Vũ Thị Lan Hương</td></tr>
+<tr><td>3</td><td>2</td><td>CLB Sống xanh</td><td>Nguyễn Thị Thúy Hằng</td></tr>
+<tr><td>4</td><td>2</td><td>CLB Pháp luật</td><td>Phạm Thị Tám</td></tr>
+<tr><td>5</td><td>3</td><td>CLB Văn nghệ</td><td>Nguyễn Thị Ly</td></tr>
+<tr><td>6</td><td>4</td><td>CLB Tiếng Anh</td><td>Nguyễn Thanh Nhã</td></tr>
+<tr><td>7</td><td>4</td><td>CLB Thể dục thể thao</td><td>Đỗ Tấn Khương</td></tr>
+</table>
+
+<section id="clubs">
+<div class="club" id="stem">
+<div class="club-content">
+<h2>1.🚀CÂU LẠC BỘ STEM</h2>
+<p><strong>Tôn chỉ:</strong> Hướng tới rèn luyện tư duy phản biện, kỹ năng giải quyết vấn đề thực tiễn, làm việc nhóm và ứng dụng kiến thức liên môn để phát triển toàn diện năng lực học sinh.</p>
+
+<p><strong>Tiêu chí:</strong></p>
+<ul>
+<li>Đam mê khoa học, công nghệ và thích tìm tòi.</li>
+<li>Sáng tạo, dám thử nghiệm ý tưởng mới.</li>
+<li>Học lực khá các môn tự nhiên (Toán, Lý, Hóa, Tin).</li>
+<li>Biết lắng nghe và phối hợp tốt khi làm việc nhóm.</li>
+<li>Đi sinh hoạt đều và hoàn thành dự án đúng hạn.</li>
+</ul>
+
+<p><strong>Thời gian:</strong> Thứ 4 (14h00 – 17h00)</p>
+<p><strong>Hoạt động:</strong> Thiết kế mô hình khoa học, lập trình cơ bản, thực hiện dự án thực tế và thuyết trình sản phẩm.</p>
+<p><strong>Người phụ trách:</strong> Phan Thị Điệp</p>
+<a href="https://ibb.co/qYz7gcVp"><img src="https://i.ibb.co/9HJc41SW/IMG-1771676369932-1771676385172.jpg" alt="IMG-1771676369932-1771676385172" border="0"></a>
+</div>
+</div>
+<div class="club" id="vanhoadoc">
+<div class="club-content">
+<h2>2.📚CÂU LẠC BỘ VĂN HÓA ĐỌC</h2>
+<p><strong>Tôn chỉ:</strong> Kết nối, chia sẻ tri thức, phát triển nhân cách, đạo đức, trí tuệ và nghị lực; thúc đẩy văn hóa đọc trong cộng đồng.</p>
+
+<p><strong>Tiêu chí:</strong></p>
+<ul>
+<li>Chọn sách có giá trị đạo đức và trí tuệ cao.</li>
+<li>Kết nối nhóm bạn cùng rèn luyện, sẻ chia.</li>
+<li>Học từ người đi trước để định hướng đúng.</li>
+<li>Đọc đi đôi với tư duy, phân tích và tóm gọn.</li>
+<li>Ứng dụng kiến thức vào đời sống.</li>
+</ul>
+<p><strong>Thời gian:</strong> Thứ 4 (14h00 – 17h00)</p>
+<p><strong>Hoạt động:</strong> Đọc sách theo chủ đề, chia sẻ cảm nhận, viết bài cảm nhận và tổ chức ngày hội sách.</p>
+<p><strong>Người phụ trách:</strong> Vũ Thị Lan Hương</p>
+<a href="https://ibb.co/60X3ZTLB"><img src="https://i.ibb.co/B2nXPQFN/Vanhoadoc2.jpg" alt="Vanhoadoc2" border="0"></a>
+</div>
+</div>
+<div class="club" id="songxanh">
+<div class="club-content">
+<h2>3.🌿CÂU LẠC BỘ SỐNG XANH</h2>
+<p><strong>Tôn chỉ:</strong> Nâng cao ý thức bảo vệ môi trường, lan tỏa lối sống xanh – sạch – bền vững.</p>
+
+<p><strong>Tiêu chí:</strong></p>
+<ul>
+<li>Có ý thức giữ gìn môi trường.</li>
+<li>Tích cực tham gia hoạt động cộng đồng.</li>
+<li>Sáng tạo trong tái chế và bảo vệ thiên nhiên.</li>
+<li>Tinh thần trách nhiệm cao.</li>
+</ul>
+
+<p><strong>Thời gian:</strong> Thứ 4 (14h00 – 17h00)</p>
+<p><strong>Hoạt động:</strong> Dọn vệ sinh, tái chế sáng tạo, trồng cây và tuyên truyền bảo vệ môi trường.</p>
+<p><strong>Người phụ trách:</strong> Nguyễn Thị Thúy Hằng</p>
+<a href="https://ibb.co/zhnFHhy3"><img src="https://i.ibb.co/3yrvYyDx/Songxanh4.jpg" alt="Songxanh4" border="0"></a>
+</div>
+</div>
+<div class="club" id="phapluat">
+<div class="club-content">
+<h2>4.⚖️CÂU LẠC BỘ PHÁP LUẬT</h2>
+<p><strong>Tôn chỉ:</strong> Trang bị kiến thức pháp luật cơ bản, nâng cao ý thức chấp hành pháp luật học đường.</p>
+
+<p><strong>Tiêu chí:</strong></p>
+<ul>
+<li>Quan tâm đến các vấn đề xã hội.</li>
+<li>Có tinh thần trách nhiệm và trung thực.</li>
+<li>Tự giác chấp hành nội quy.</li>
+<li>Ham học hỏi và thích tranh biện.</li>
+</ul>
+
+<p><strong>Thời gian:</strong> Thứ 4 (14h00 – 17h00)</p>
+<p><strong>Hoạt động:</strong> Phiên tòa giả định, thi tìm hiểu pháp luật, thảo luận tình huống thực tế.</p>
+<p><strong>Người phụ trách:</strong> Phạm Thị Tám</p>
+<a href="https://ibb.co/wNnY1PhW"><img src="https://i.ibb.co/TBQr57M8/phapluat2.jpg" alt="phapluat2" border="0"></a>
+
+</div>
+</div>
+<div class="club" id="vannghe">
+<div class="club-content">
+<h2>5.🎤CÂU LẠC BỘ VĂN NGHỆ</h2>
+<p><strong>Tôn chỉ:</strong> Phát triển năng khiếu nghệ thuật và xây dựng môi trường sáng tạo.</p>
+
+<p><strong>Tiêu chí:</strong></p>
+<ul>
+<li>Yêu thích ca hát, múa, diễn xuất.</li>
+<li>Tự tin trước đám đông.</li>
+<li>Tinh thần hợp tác và kỷ luật.</li>
+<li>Nhiệt tình tham gia phong trào.</li>
+</ul>
+
+<p><strong>Thời gian:</strong> Thứ 4 (14h00 – 17h00)</p>
+<p><strong>Hoạt động:</strong> Luyện tập văn nghệ, xây dựng tiết mục biểu diễn và tham gia hội diễn.</p>
+<p><strong>Người phụ trách:</strong> Nguyễn Thị Ly</p>
+<a href="https://ibb.co/CsmKpGys"><img src="https://i.ibb.co/84NgnZw4/Tienganh4.jpg" alt="Tienganh4" border="0"></a>
+</div>
+</div>
+<div class="club" id="tienganh">
+<div class="club-content">
+<h2>6.CÂU LẠC BỘ TIẾNG ANH</h2>
+<p><strong>Tôn chỉ:</strong> Tạo môi trường giao tiếp tiếng Anh tự nhiên, nâng cao kỹ năng nghe – nói – đọc – viết.</p>
+
+<p><strong>Tiêu chí:</strong></p>
+<ul>
+<li>Yêu thích tiếng Anh.</li>
+<li>Chủ động giao tiếp.</li>
+<li>Không ngại sai khi nói.</li>
+<li>Tinh thần học hỏi và hợp tác.</li>
+</ul>
+
+<p><strong>Thời gian:</strong> Thứ 4 (14h00 – 17h00)</p>
+<p><strong>Hoạt động:</strong> Thảo luận chủ đề, trò chơi tiếng Anh, thuyết trình và English Speaking Day.</p>
+<p><strong>Người phụ trách:</strong> Nguyễn Thanh Nhã</p>
+<a href="https://ibb.co/jZJsJyJY"><img src="https://i.ibb.co/tPLFLqL6/CLB-TA-1.jpg" alt="CLB-TA-1" border="0"></a>
+</div>
+</div>
+<div class="club" id="thethao">
+<div class="club-content">
+<h2>7.🏆CÂU LẠC BỘ THỂ DỤC THỂ THAO</h2>
+<p><strong>Tôn chỉ:</strong> Rèn luyện thể chất, nâng cao sức khỏe và tinh thần đoàn kết.</p>
+
+<p><strong>Tiêu chí:</strong></p>
+<ul>
+<li>Yêu thích vận động thể thao.</li>
+<li>Có tinh thần đồng đội.</li>
+<li>Tuân thủ kỷ luật.</li>
+<li>Tích cực tham gia thi đấu.</li>
+</ul>
+
+<p><strong>Thời gian:</strong> Thứ 4 (14h00 – 17h00)</p>
+<p><strong>Hoạt động:</strong> Luyện tập bóng đá, bóng chuyền, cầu lông và tổ chức giải đấu nội bộ.</p>
+<p><strong>Người phụ trách:</strong> Đỗ Tấn Khương</p>
+<a href="https://ibb.co/sd8N7HSy"><img src="https://i.ibb.co/LXVcK5wn/thethao3.jpg" alt="thethao3" border="0"></a>
+</div>
+</div>
+
+</section>
+
+<footer>
+© 2026 THPT Võ Nguyên Giáp –Thiết kế bới Ngọc Trâm 12a3
+</footer>
+
+</body>
+</html>
